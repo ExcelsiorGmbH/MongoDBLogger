@@ -1,0 +1,11 @@
+D:\Programming\MongoDBLogger\MongoDBLogger\obj\Release\pGina.Plugin.MonogDBLogger.Configuration.resources
+D:\Programming\MongoDBLogger\MongoDBLogger\obj\Release\MongoDBLogger.csproj.GenerateResource.Cache
+D:\Programming\MongoDBLogger\MongoDBLogger\bin\Release\MongoDBLogger.dll
+D:\Programming\MongoDBLogger\MongoDBLogger\bin\Release\MongoDBLogger.pdb
+D:\Programming\MongoDBLogger\MongoDBLogger\bin\Release\Abstractions.dll
+D:\Programming\MongoDBLogger\MongoDBLogger\bin\Release\log4net.dll
+D:\Programming\MongoDBLogger\MongoDBLogger\bin\Release\pGina.Shared.dll
+D:\Programming\MongoDBLogger\MongoDBLogger\bin\Release\Abstractions.pdb
+D:\Programming\MongoDBLogger\MongoDBLogger\bin\Release\pGina.Shared.pdb
+D:\Programming\MongoDBLogger\MongoDBLogger\obj\Release\MongoDBLogger.dll
+D:\Programming\MongoDBLogger\MongoDBLogger\obj\Release\MongoDBLogger.pdb
