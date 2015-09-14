@@ -1,8 +1,0 @@
-D:\Programming\MongoDBLogger\MongoDBLogger\bin\Debug\MongoDBLogger.dll
-D:\Programming\MongoDBLogger\MongoDBLogger\bin\Debug\MongoDBLogger.pdb
-D:\Programming\MongoDBLogger\MongoDBLogger\bin\Debug\log4net.dll
-D:\Programming\MongoDBLogger\MongoDBLogger\bin\Debug\pGina.Shared.dll
-D:\Programming\MongoDBLogger\MongoDBLogger\bin\Debug\pGina.Shared.pdb
-D:\Programming\MongoDBLogger\MongoDBLogger\obj\Debug\MongoDBLogger.csprojResolveAssemblyReference.cache
-D:\Programming\MongoDBLogger\MongoDBLogger\obj\Debug\MongoDBLogger.dll
-D:\Programming\MongoDBLogger\MongoDBLogger\obj\Debug\MongoDBLogger.pdb
