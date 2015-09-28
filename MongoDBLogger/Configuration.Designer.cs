@@ -67,7 +67,7 @@
             this.okBtn.Location = new System.Drawing.Point(349, 300);
             this.okBtn.Name = "okBtn";
             this.okBtn.Size = new System.Drawing.Size(75, 23);
-            this.okBtn.TabIndex = 0;
+            this.okBtn.TabIndex = 20;
             this.okBtn.Text = "Ok";
             this.okBtn.UseVisualStyleBackColor = true;
             this.okBtn.Click += new System.EventHandler(this.okBtn_Click);
@@ -77,7 +77,7 @@
             this.cancelBtn.Location = new System.Drawing.Point(430, 300);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 23);
-            this.cancelBtn.TabIndex = 1;
+            this.cancelBtn.TabIndex = 19;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
@@ -102,6 +102,7 @@
             this.sessionModeCB.TabIndex = 1;
             this.sessionModeCB.Text = "Session Mode";
             this.sessionModeCB.UseVisualStyleBackColor = true;
+            this.sessionModeCB.CheckStateChanged += new System.EventHandler(this.ModeChange);
             // 
             // eventModeCB
             // 
@@ -112,6 +113,7 @@
             this.eventModeCB.TabIndex = 0;
             this.eventModeCB.Text = "Event Mode";
             this.eventModeCB.UseVisualStyleBackColor = true;
+            this.eventModeCB.CheckStateChanged += new System.EventHandler(this.ModeChange);
             // 
             // groupBox2
             // 
@@ -136,7 +138,7 @@
             this.sessionTableTB.Location = new System.Drawing.Point(92, 96);
             this.sessionTableTB.Name = "sessionTableTB";
             this.sessionTableTB.Size = new System.Drawing.Size(307, 20);
-            this.sessionTableTB.TabIndex = 4;
+            this.sessionTableTB.TabIndex = 7;
             // 
             // label3
             // 
@@ -152,7 +154,7 @@
             this.eventTableTB.Location = new System.Drawing.Point(92, 70);
             this.eventTableTB.Name = "eventTableTB";
             this.eventTableTB.Size = new System.Drawing.Size(308, 20);
-            this.eventTableTB.TabIndex = 3;
+            this.eventTableTB.TabIndex = 6;
             // 
             // label2
             // 
@@ -169,16 +171,17 @@
             this.showPassCB.Location = new System.Drawing.Point(405, 21);
             this.showPassCB.Name = "showPassCB";
             this.showPassCB.Size = new System.Drawing.Size(77, 17);
-            this.showPassCB.TabIndex = 7;
+            this.showPassCB.TabIndex = 4;
             this.showPassCB.Text = "Show Text";
             this.showPassCB.UseVisualStyleBackColor = true;
+            this.showPassCB.CheckedChanged += new System.EventHandler(this.showPassCB_CheckedChanged);
             // 
             // dbTB
             // 
             this.dbTB.Location = new System.Drawing.Point(93, 44);
             this.dbTB.Name = "dbTB";
             this.dbTB.Size = new System.Drawing.Size(307, 20);
-            this.dbTB.TabIndex = 2;
+            this.dbTB.TabIndex = 5;
             // 
             // dbLabel
             // 
@@ -194,7 +197,8 @@
             this.hostTB.Location = new System.Drawing.Point(92, 19);
             this.hostTB.Name = "hostTB";
             this.hostTB.Size = new System.Drawing.Size(307, 20);
-            this.hostTB.TabIndex = 0;
+            this.hostTB.TabIndex = 3;
+            this.hostTB.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -223,15 +227,35 @@
             this.eventsBox.TabStop = false;
             this.eventsBox.Text = "Events";
             // 
-            // remoteDisconnectEvtCB
+            // logonEvtCB
             // 
-            this.remoteDisconnectEvtCB.AutoSize = true;
-            this.remoteDisconnectEvtCB.Location = new System.Drawing.Point(261, 42);
-            this.remoteDisconnectEvtCB.Name = "remoteDisconnectEvtCB";
-            this.remoteDisconnectEvtCB.Size = new System.Drawing.Size(120, 17);
-            this.remoteDisconnectEvtCB.TabIndex = 7;
-            this.remoteDisconnectEvtCB.Text = "Remote Disconnect";
-            this.remoteDisconnectEvtCB.UseVisualStyleBackColor = true;
+            this.logonEvtCB.AutoSize = true;
+            this.logonEvtCB.Location = new System.Drawing.Point(6, 19);
+            this.logonEvtCB.Name = "logonEvtCB";
+            this.logonEvtCB.Size = new System.Drawing.Size(56, 17);
+            this.logonEvtCB.TabIndex = 8;
+            this.logonEvtCB.Text = "Logon";
+            this.logonEvtCB.UseVisualStyleBackColor = true;
+            // 
+            // lockEvtCB
+            // 
+            this.lockEvtCB.AutoSize = true;
+            this.lockEvtCB.Location = new System.Drawing.Point(68, 19);
+            this.lockEvtCB.Name = "lockEvtCB";
+            this.lockEvtCB.Size = new System.Drawing.Size(50, 17);
+            this.lockEvtCB.TabIndex = 9;
+            this.lockEvtCB.Text = "Lock";
+            this.lockEvtCB.UseVisualStyleBackColor = true;
+            // 
+            // consoleConnectEvtCB
+            // 
+            this.consoleConnectEvtCB.AutoSize = true;
+            this.consoleConnectEvtCB.Location = new System.Drawing.Point(134, 19);
+            this.consoleConnectEvtCB.Name = "consoleConnectEvtCB";
+            this.consoleConnectEvtCB.Size = new System.Drawing.Size(107, 17);
+            this.consoleConnectEvtCB.TabIndex = 10;
+            this.consoleConnectEvtCB.Text = "Console Connect";
+            this.consoleConnectEvtCB.UseVisualStyleBackColor = true;
             // 
             // remoteConnectEvtCB
             // 
@@ -239,7 +263,7 @@
             this.remoteConnectEvtCB.Location = new System.Drawing.Point(261, 19);
             this.remoteConnectEvtCB.Name = "remoteConnectEvtCB";
             this.remoteConnectEvtCB.Size = new System.Drawing.Size(106, 17);
-            this.remoteConnectEvtCB.TabIndex = 6;
+            this.remoteConnectEvtCB.TabIndex = 11;
             this.remoteConnectEvtCB.Text = "Remote Connect";
             this.remoteConnectEvtCB.UseVisualStyleBackColor = true;
             // 
@@ -249,49 +273,9 @@
             this.remoteControlEvtCB.Location = new System.Drawing.Point(383, 19);
             this.remoteControlEvtCB.Name = "remoteControlEvtCB";
             this.remoteControlEvtCB.Size = new System.Drawing.Size(99, 17);
-            this.remoteControlEvtCB.TabIndex = 8;
+            this.remoteControlEvtCB.TabIndex = 12;
             this.remoteControlEvtCB.Text = "Remote Control";
             this.remoteControlEvtCB.UseVisualStyleBackColor = true;
-            // 
-            // consoleDisconnectEvtCB
-            // 
-            this.consoleDisconnectEvtCB.AutoSize = true;
-            this.consoleDisconnectEvtCB.Location = new System.Drawing.Point(134, 42);
-            this.consoleDisconnectEvtCB.Name = "consoleDisconnectEvtCB";
-            this.consoleDisconnectEvtCB.Size = new System.Drawing.Size(121, 17);
-            this.consoleDisconnectEvtCB.TabIndex = 5;
-            this.consoleDisconnectEvtCB.Text = "Console Disconnect";
-            this.consoleDisconnectEvtCB.UseVisualStyleBackColor = true;
-            // 
-            // consoleConnectEvtCB
-            // 
-            this.consoleConnectEvtCB.AutoSize = true;
-            this.consoleConnectEvtCB.Location = new System.Drawing.Point(134, 19);
-            this.consoleConnectEvtCB.Name = "consoleConnectEvtCB";
-            this.consoleConnectEvtCB.Size = new System.Drawing.Size(107, 17);
-            this.consoleConnectEvtCB.TabIndex = 4;
-            this.consoleConnectEvtCB.Text = "Console Connect";
-            this.consoleConnectEvtCB.UseVisualStyleBackColor = true;
-            // 
-            // unlockEvtCB
-            // 
-            this.unlockEvtCB.AutoSize = true;
-            this.unlockEvtCB.Location = new System.Drawing.Point(68, 42);
-            this.unlockEvtCB.Name = "unlockEvtCB";
-            this.unlockEvtCB.Size = new System.Drawing.Size(60, 17);
-            this.unlockEvtCB.TabIndex = 3;
-            this.unlockEvtCB.Text = "Unlock";
-            this.unlockEvtCB.UseVisualStyleBackColor = true;
-            // 
-            // lockEvtCB
-            // 
-            this.lockEvtCB.AutoSize = true;
-            this.lockEvtCB.Location = new System.Drawing.Point(68, 19);
-            this.lockEvtCB.Name = "lockEvtCB";
-            this.lockEvtCB.Size = new System.Drawing.Size(50, 17);
-            this.lockEvtCB.TabIndex = 2;
-            this.lockEvtCB.Text = "Lock";
-            this.lockEvtCB.UseVisualStyleBackColor = true;
             // 
             // logoffEvtCB
             // 
@@ -299,19 +283,39 @@
             this.logoffEvtCB.Location = new System.Drawing.Point(6, 42);
             this.logoffEvtCB.Name = "logoffEvtCB";
             this.logoffEvtCB.Size = new System.Drawing.Size(56, 17);
-            this.logoffEvtCB.TabIndex = 1;
+            this.logoffEvtCB.TabIndex = 13;
             this.logoffEvtCB.Text = "Logoff";
             this.logoffEvtCB.UseVisualStyleBackColor = true;
             // 
-            // logonEvtCB
+            // unlockEvtCB
             // 
-            this.logonEvtCB.AutoSize = true;
-            this.logonEvtCB.Location = new System.Drawing.Point(6, 19);
-            this.logonEvtCB.Name = "logonEvtCB";
-            this.logonEvtCB.Size = new System.Drawing.Size(56, 17);
-            this.logonEvtCB.TabIndex = 0;
-            this.logonEvtCB.Text = "Logon";
-            this.logonEvtCB.UseVisualStyleBackColor = true;
+            this.unlockEvtCB.AutoSize = true;
+            this.unlockEvtCB.Location = new System.Drawing.Point(68, 42);
+            this.unlockEvtCB.Name = "unlockEvtCB";
+            this.unlockEvtCB.Size = new System.Drawing.Size(60, 17);
+            this.unlockEvtCB.TabIndex = 14;
+            this.unlockEvtCB.Text = "Unlock";
+            this.unlockEvtCB.UseVisualStyleBackColor = true;
+            // 
+            // consoleDisconnectEvtCB
+            // 
+            this.consoleDisconnectEvtCB.AutoSize = true;
+            this.consoleDisconnectEvtCB.Location = new System.Drawing.Point(134, 42);
+            this.consoleDisconnectEvtCB.Name = "consoleDisconnectEvtCB";
+            this.consoleDisconnectEvtCB.Size = new System.Drawing.Size(121, 17);
+            this.consoleDisconnectEvtCB.TabIndex = 15;
+            this.consoleDisconnectEvtCB.Text = "Console Disconnect";
+            this.consoleDisconnectEvtCB.UseVisualStyleBackColor = true;
+            // 
+            // remoteDisconnectEvtCB
+            // 
+            this.remoteDisconnectEvtCB.AutoSize = true;
+            this.remoteDisconnectEvtCB.Location = new System.Drawing.Point(261, 42);
+            this.remoteDisconnectEvtCB.Name = "remoteDisconnectEvtCB";
+            this.remoteDisconnectEvtCB.Size = new System.Drawing.Size(120, 17);
+            this.remoteDisconnectEvtCB.TabIndex = 16;
+            this.remoteDisconnectEvtCB.Text = "Remote Disconnect";
+            this.remoteDisconnectEvtCB.UseVisualStyleBackColor = true;
             // 
             // optionsBox
             // 
@@ -329,7 +333,7 @@
             this.useModNameCB.Location = new System.Drawing.Point(7, 18);
             this.useModNameCB.Name = "useModNameCB";
             this.useModNameCB.Size = new System.Drawing.Size(139, 17);
-            this.useModNameCB.TabIndex = 0;
+            this.useModNameCB.TabIndex = 17;
             this.useModNameCB.Text = "Use Modified Username";
             this.useModNameCB.UseVisualStyleBackColor = true;
             // 
@@ -338,7 +342,7 @@
             this.testButton.Location = new System.Drawing.Point(12, 298);
             this.testButton.Name = "testButton";
             this.testButton.Size = new System.Drawing.Size(67, 27);
-            this.testButton.TabIndex = 7;
+            this.testButton.TabIndex = 18;
             this.testButton.Text = "Test...";
             this.testButton.UseVisualStyleBackColor = true;
             this.testButton.Click += new System.EventHandler(this.testButton_Click);
